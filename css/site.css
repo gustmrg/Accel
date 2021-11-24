@@ -1,0 +1,76 @@
+:root {
+  --primary-color: #003F63;
+  --secondary-color: #F2B138;
+  --dark-color: #292929;
+  --white-color: #e7e7e7;
+}
+
+body {
+  color: var(--dark-color);
+}
+
+nav {
+  background-color: var(--dark-color);
+}
+
+main > .container {
+  padding: 60px 15px 0;
+  margin-bottom: 5rem;
+}
+.sticky-footer {
+  position: sticky;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-color);
+}
+
+footer {
+  background-color: var(--dark-color);
+  padding-right: 1rem;
+}
+
+footer .social>a{
+  color: var(--white-color);
+  opacity: 0.75;
+}
+
+footer .social>a:hover{
+  opacity: 0.9;
+  color: var(--secondary-color);
+}
+
+#logo {
+  color: var(--white-color);
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.bsicon {
+  color: #7952B3;
+}
+
+.jsicon {
+  color: #E6C72F;
+}
+
+.html5icon {
+  color: #E34B24;
+}
+
+.css3icon {
+  color: #006DB8;
+}
+
+.checklist >li i {
+  color: var(--secondary-color);
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+}
