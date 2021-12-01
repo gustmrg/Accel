@@ -5,6 +5,12 @@
   --white-color: #e7e7e7;
 }
 
+.logoFont {
+  font-family: 'Racing Sans One', cursive;
+  font-weight: 600;
+  font-style: italic;
+}
+
 body {
   color: var(--dark-color);
 }
@@ -73,4 +79,12 @@ pre[class*="language-"] {
   white-space: pre-wrap;
   word-break: break-all;
   word-wrap: break-word;
+}
+
+.odd {
+  font-weight: 100;
+}
+
+.even {
+  font-weight: bold;
 }

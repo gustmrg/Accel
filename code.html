@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project by Gustavo Miranda</title>
+    <title>ACCEL: A Coding Project by Gustavo Miranda</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,6 +24,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet"> 
 
     <link rel="icon" type="image/png" href="img/favicon-32x32.png">
 </head>
@@ -32,9 +33,9 @@
     <!-- Nav Section -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand logoFont" href="#">
                 <img src="#" class="d-inline-block align-text-top">
-                App Name
+                ACCEL
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,7 +53,7 @@
                         <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/gustmrg/Accel">Git Repo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" target="_blank" href="#">About</a>
@@ -65,14 +66,68 @@
     <!-- Main Section -->
     <main class="flex-shrink-0">
         <div class="container py-5 px-5 mt-5">
-            <h2 class="border-1 border-bottom border-dark">The Code for App Name.</h2>
+            <h2 class="border-1 border-bottom border-dark">The Code for Accel.</h2>
             <div class="row row-cols-1 row-col-lg-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers">
-                    <code class="language-javascript">
-                        // Call Hello World
-                        function HelloWorld() {
-                            alert("Hello World!");
+                    <code class="language-javascript">                       
+                        // get the values from the user input
+                        // * starts or controller function
+                        function getValues() {
+                            // get values from the page
+                            let startValue = document.getElementById("startValue").value;
+                            let endValue = document.getElementById("endValue").value;
+
+                            startValue = parseInt(startValue);
+                            endValue = parseInt(endValue);
+
+                            if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
+                                // call generateNumbers
+                                let numbers = generateNumbers(startValue, endValue);    
+                                // call displayNumbers
+                                displayNumbers(numbers);
+                            } else {
+                                console.log("You must enter integers.");
+                            }
+
+                            
+
+                        }
+
+                        // generate numbers from startValue to the endValue
+                        // * logic function
+                        function generateNumbers(startValue, endValue) {
+                            let numbers = [];
+
+                            // get all the numbers from start to end
+                            for (let index = startValue; index <= endValue; index++) {
+                                numbers.push(index);
+                            }
+
+                            return numbers;
+
+                        }
+
+                        // display even numbers in bold
+                        // * display or view functions
+                        function displayNumbers(numbers) {
+                            let templateRows = "";
+
+                            for (let index = 0; index < numbers.length; index++) {
+                                let number = numbers[index];
+                                let className = "even";
+                                
+                                if (number % 2 == 0) {
+                                    className = "even";   
+                                } else {
+                                    className = "odd";
+                                }
+                                
+                                templateRows += `&lt;tr>&lt;td class="${className}">${number}&lt;/td>&lt;/tr>
+                            }
+
+                            document.getElementById("results").innerHTML = templateRows;
+
                         }
                     </code>
                     </pre>
